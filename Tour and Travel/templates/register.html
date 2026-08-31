@@ -1,0 +1,381 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section style="margin-top: 50px;" class="min-h-[calc(100vh-160px)] bg-gradient-to-br from-slate-50 via-white to-teal-50/50 py-16">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+
+  <!-- Left: Content -->
+  <div class="hidden lg:block">
+
+    <span class="inline-flex items-center gap-2 rounded-full bg-teal-50 border border-teal-100 px-4 py-2 text-sm font-bold text-teal-700">
+      <span class="w-2 h-2 rounded-full bg-teal-500"></span>
+      Join Aman Travels
+    </span>
+
+    <h1 class="mt-6 text-5xl xl:text-6xl font-extrabold tracking-tight leading-tight text-slate-900">
+      Start your next
+      <span class="text-teal-700">adventure.</span>
+    </h1>
+
+    <p class="mt-6 max-w-xl text-lg leading-8 text-slate-500">
+      Create your Aman Travels account and make planning your next
+      journey easier, faster and more personal.
+    </p>
+
+    <!-- Benefits -->
+    <div class="mt-10 space-y-5">
+
+      <div class="flex items-center gap-4">
+        <div class="w-11 h-11 rounded-xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-teal-700">
+          ✓
+        </div>
+
+        <div>
+          <h3 class="font-bold text-slate-900">
+            Personalized trips
+          </h3>
+          <p class="text-sm text-slate-500">
+            Save destinations and build your perfect itinerary.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <div class="w-11 h-11 rounded-xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-teal-700">
+          ✓
+        </div>
+
+        <div>
+          <h3 class="font-bold text-slate-900">
+            Exclusive travel deals
+          </h3>
+          <p class="text-sm text-slate-500">
+            Get access to special offers and curated packages.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <div class="w-11 h-11 rounded-xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-teal-700">
+          ✓
+        </div>
+
+        <div>
+          <h3 class="font-bold text-slate-900">
+            24/7 travel support
+          </h3>
+          <p class="text-sm text-slate-500">
+            We're here whenever you need help on your journey.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- Right: Registration Card -->
+  <div class="w-full max-w-xl mx-auto lg:ml-auto">
+
+    <div class="bg-white rounded-[2rem] border border-slate-100 shadow-2xl shadow-slate-900/10 p-6 sm:p-8 lg:p-10">
+
+      <!-- Header -->
+      <div class="text-center">
+
+        <div class="mx-auto w-14 h-14 rounded-2xl bg-teal-700 text-white flex items-center justify-center shadow-lg shadow-teal-700/20">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-7 h-7"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+            />
+          </svg>
+        </div>
+
+        <h2 class="mt-5 text-2xl sm:text-3xl font-extrabold text-slate-900">
+          Create your account
+        </h2>
+
+        <p class="mt-2 text-sm text-slate-500">
+          Join thousands of travelers exploring the world with Aman Travels.
+        </p>
+
+      </div>
+
+
+      <!-- Form -->
+      <form method="POST" action="{{url_for('register')}}" class="mt-8 space-y-5">
+        <!-- Full Name -->
+        <div>
+          <label
+            for="full_name"
+            class="block text-sm font-bold text-slate-700 mb-2"
+          >
+            Full name
+          </label>
+
+          <div class="relative">
+
+            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zm13 10v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"
+                />
+              </svg>
+            </div>
+
+            <input
+              type="text"
+              id="full_name"
+              name="full_name"
+              placeholder="Enter your full name"
+              autocomplete="name"
+              required
+              class="w-full rounded-xl border border-slate-200 bg-slate-50 pl-12 pr-4 py-3.5 text-sm text-slate-900 outline-none transition focus:border-teal-500 focus:bg-white focus:ring-4 focus:ring-teal-500/10 placeholder:text-slate-400"
+            />
+
+          </div>
+        </div>
+
+
+        <!-- Email -->
+        <div>
+          <label
+            for="email"
+            class="block text-sm font-bold text-slate-700 mb-2"
+          >
+            Email address
+          </label>
+
+          <div class="relative">
+
+            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M22 6l-10 7L2 6"
+                />
+              </svg>
+            </div>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+              class="w-full rounded-xl border border-slate-200 bg-slate-50 pl-12 pr-4 py-3.5 text-sm text-slate-900 outline-none transition focus:border-teal-500 focus:bg-white focus:ring-4 focus:ring-teal-500/10 placeholder:text-slate-400"
+            />
+
+          </div>
+        </div>
+
+
+        <!-- Phone -->
+        <div>
+          <label
+            for="phone"
+            class="block text-sm font-bold text-slate-700 mb-2"
+          >
+            Phone number
+          </label>
+
+          <div class="relative">
+
+            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 5a2 2 0 012-2h2l2 5-2 2a16 16 0 007 7l2-2 5 2v2a2 2 0 01-2 2C10.27 21 3 13.73 3 5z"
+                />
+              </svg>
+            </div>
+
+            
+
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+91 98765 43210"
+              autocomplete="tel"
+              required
+              class="w-full rounded-xl border border-slate-200 bg-slate-50 pl-12 pr-4 py-3.5 text-sm text-slate-900 outline-none transition focus:border-teal-500 focus:bg-white focus:ring-4 focus:ring-teal-500/10 placeholder:text-slate-400"
+            />
+
+          </div>
+        </div>
+        
+        <!-- password -->
+          <div>
+          <label
+            for="password"
+            class="block text-sm font-bold text-slate-700 mb-2"
+          >
+            Password
+          </label>
+
+          <div class="relative">
+
+            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+              <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7 10V7a5 5 0 0110 0v3m-9 0h8a2 2 0 012 2v7a2 2 0 01-2 2H8a2 2 0 01-2-2v-7a2 2 0 012-2z"
+                    />
+                  </svg>
+            </div>
+
+            
+
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              autocomplete="password"
+              required
+              class="w-full rounded-xl border border-slate-200 bg-slate-50 pl-12 pr-4 py-3.5 text-sm text-slate-900 outline-none transition focus:border-teal-500 focus:bg-white focus:ring-4 focus:ring-teal-500/10 placeholder:text-slate-400"
+            />
+
+          </div>
+        </div>
+
+
+
+        <!-- Terms -->
+        <div class="flex items-start gap-3 pt-1">
+
+          <input
+            type="checkbox"
+            id="terms"
+            name="terms"
+            required
+            class="mt-1 w-4 h-4 rounded border-slate-300 text-teal-700 focus:ring-teal-500"
+          />
+
+          <label
+            for="terms"
+            class="text-xs leading-5 text-slate-500"
+          >
+            I agree to the
+            <a href="#" class="font-semibold text-teal-700 hover:text-teal-800">
+              Terms of Service
+            </a>
+            and
+            <a href="#" class="font-semibold text-teal-700 hover:text-teal-800">
+              Privacy Policy
+            </a>.
+          </label>
+
+        </div>
+
+
+        <!-- Submit -->
+        <button
+          type="submit"
+          class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-teal-700 hover:bg-teal-800 px-5 py-3.5 text-sm font-bold text-white shadow-lg shadow-teal-700/20 transition"
+        >
+          Create my account
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M5 12h14m-6-6l6 6-6 6"
+            />
+          </svg>
+        </button>
+
+      </form>
+
+
+      <!-- Login -->
+      <div class="relative my-7">
+        <div class="absolute inset-0 flex items-center">
+          <div class="w-full border-t border-slate-100"></div>
+        </div>
+
+        <div class="relative flex justify-center">
+          <span class="bg-white px-4 text-xs text-slate-400">
+            Already a member?
+          </span>
+        </div>
+      </div>
+
+      <a
+        href="{{url_for('login')}}"
+        class="w-full inline-flex items-center justify-center rounded-xl border border-slate-200 px-5 py-3.5 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:border-slate-300 transition"
+      >
+        Sign in to Aman Travels
+      </a>
+
+    </div>
+
+    <p class="mt-5 text-center text-xs text-slate-400">
+      Your information is protected and will never be shared without your permission.
+    </p>
+
+  </div>
+
+</div>
+```
+
+  </div>
+</section>
+
+{% endblock content %}

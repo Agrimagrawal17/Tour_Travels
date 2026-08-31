@@ -1,0 +1,396 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="min-h-screen pt-28 pb-16 flex items-center relative overflow-hidden">
+
+  <!-- Background Decorations -->
+  <div class="absolute -top-32 -left-32 w-96 h-96 bg-teal-200/40 rounded-full blob"></div>
+  <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-amber-200/30 rounded-full blob"></div>
+
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+
+      <!-- Left Content -->
+      <div class="hidden lg:block">
+
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-50 border border-teal-100 text-teal-700 text-sm font-semibold">
+          <span class="w-2 h-2 rounded-full bg-teal-600"></span>
+          Welcome back
+        </div>
+
+        <h1 class="mt-6 text-5xl xl:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.08]">
+          Your next
+          <span class="text-teal-700"> adventure </span>
+          starts here.
+        </h1>
+
+        <p class="mt-6 max-w-lg text-lg text-slate-500 leading-8">
+          Sign in to Aman Travels and continue planning unforgettable
+          journeys, discovering new destinations and managing your trips.
+        </p>
+
+        <!-- Feature Cards -->
+        <div class="mt-10 grid grid-cols-2 gap-4 max-w-lg">
+
+          <div class="lift bg-white rounded-2xl border border-slate-100 p-5 shadow-lg shadow-black/5">
+            <div class="w-11 h-11 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center">
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-7a2 2 0 00-2-2H6a2 2 0 00-2 2v7a2 2 0 002 2zm10-9V7a4 4 0 00-8 0v3h8z"
+                />
+              </svg>
+            </div>
+
+            <h3 class="mt-4 font-bold text-slate-900">
+              Secure Access
+            </h3>
+
+            <p class="mt-1 text-sm text-slate-500">
+              Your account stays protected.
+            </p>
+          </div>
+
+          <div class="lift bg-white rounded-2xl border border-slate-100 p-5 shadow-lg shadow-black/5">
+            <div class="w-11 h-11 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center">
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 21s8-4.5 8-10.5A8 8 0 004 10.5C4 16.5 12 21 12 21z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9.5 10.5l1.5 1.5 3.5-3.5"
+                />
+              </svg>
+            </div>
+
+            <h3 class="mt-4 font-bold text-slate-900">
+              Travel Smarter
+            </h3>
+
+            <p class="mt-1 text-sm text-slate-500">
+              Keep your trips organized.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Login Card -->
+      <div class="w-full max-w-md mx-auto lg:ml-auto">
+
+        <div class="bg-white rounded-3xl border border-slate-100 shadow-2xl shadow-slate-900/10 p-6 sm:p-8 lg:p-10">
+
+          <!-- Mobile Brand Intro -->
+          <div class="lg:hidden text-center mb-8">
+
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-50 text-teal-700 text-sm font-semibold">
+              <span class="w-2 h-2 rounded-full bg-teal-600"></span>
+              Welcome back
+            </div>
+
+          </div>
+
+
+          <!-- Heading -->
+          <div class="text-center">
+
+            <div class="mx-auto w-14 h-14 rounded-2xl bg-teal-700 text-white flex items-center justify-center shadow-lg shadow-teal-700/20">
+
+              <svg
+                class="w-7 h-7"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 11a4 4 0 10-8 0 4 4 0 008 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 21a8 8 0 0116 0"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M18 8h3m-1.5-1.5v3"
+                />
+              </svg>
+
+            </div>
+
+            <h2 class="mt-6 text-3xl font-extrabold tracking-tight text-slate-900">
+              Welcome back
+            </h2>
+
+            <p class="mt-2 text-sm text-slate-500">
+              Sign in to continue your journey with Aman Travels.
+            </p>
+
+          </div>
+
+
+          <!-- Login Form -->
+          <form action="{{ url_for('login') }}" method="POST" class="mt-8 space-y-5">
+
+            <!-- Email -->
+            <div>
+
+              <label
+                for="email"
+                class="block text-sm font-semibold text-slate-700 mb-2"
+              >
+                Email address
+              </label>
+
+              <div class="relative">
+
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M3 7l9 6 9-6M5 5h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z"
+                    />
+                  </svg>
+
+                </div>
+
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                  required
+                  class="w-full pl-12 pr-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-900 placeholder-slate-400 outline-none transition focus:border-teal-600 focus:ring-4 focus:ring-teal-600/10 focus:bg-white"
+                />
+
+              </div>
+
+            </div>
+
+
+            <!-- Password -->
+            <div>
+
+              <div class="flex items-center justify-between mb-2">
+
+                <label
+                  for="password"
+                  class="block text-sm font-semibold text-slate-700"
+                >
+                  Password
+                </label>
+
+                <a
+                  href="#"
+                  class="text-sm font-semibold text-teal-700 hover:text-teal-800 transition"
+                >
+                  Forgot password?
+                </a>
+
+              </div>
+
+              <div class="relative">
+
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7 10V7a5 5 0 0110 0v3m-9 0h8a2 2 0 012 2v7a2 2 0 01-2 2H8a2 2 0 01-2-2v-7a2 2 0 012-2z"
+                    />
+                  </svg>
+
+                </div>
+
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Enter your password"
+                  autocomplete="current-password"
+                  required
+                  class="w-full pl-12 pr-12 py-3.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-900 placeholder-slate-400 outline-none transition focus:border-teal-600 focus:ring-4 focus:ring-teal-600/10 focus:bg-white"
+                />
+
+                <button
+                  type="button"
+                  id="togglePassword"
+                  class="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-teal-700 transition"
+                  aria-label="Show password"
+                >
+                  <svg
+                    id="eyeIcon"
+                    class="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6z"
+                    />
+                    <circle cx="12" cy="12" r="2.5" />
+                  </svg>
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- Remember Me -->
+            <div class="flex items-center">
+
+              <label class="inline-flex items-center gap-3 cursor-pointer">
+
+                <input
+                  type="checkbox"
+                  name="remember"
+                  class="w-4 h-4 rounded border-slate-300 text-teal-700 focus:ring-teal-600"
+                />
+
+                <span class="text-sm text-slate-600">
+                  Remember me
+                </span>
+
+              </label>
+
+            </div>
+
+
+            <!-- Submit -->
+            <button
+              type="submit"
+              class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-teal-700 px-5 py-3.5 text-sm font-bold text-white hover:bg-teal-800 transition shadow-lg shadow-teal-700/20"
+            >
+              Sign In
+
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 12h14m-6-6l6 6-6 6"
+                />
+              </svg>
+
+            </button>
+
+          </form>
+
+
+          <!-- Register -->
+          <div class="mt-8 text-center">
+
+            <p class="text-sm text-slate-500">
+              Don't have an account?
+
+              <a
+                href="{{ url_for('register') }}"
+                class="font-bold text-teal-700 hover:text-teal-800 transition"
+              >
+                Create an account
+              </a>
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- Trust Text -->
+        <div class="mt-5 flex items-center justify-center gap-2 text-xs text-slate-400">
+
+          <svg
+            class="w-4 h-4 text-teal-600"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7l7-4z"
+            />
+          </svg>
+
+          Secure account access
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- Password Toggle -->
+<script>
+  const togglePassword = document.getElementById("togglePassword");
+  const passwordInput = document.getElementById("password");
+
+  togglePassword.addEventListener("click", () => {
+    const isPassword = passwordInput.type === "password";
+
+    passwordInput.type = isPassword ? "text" : "password";
+
+    togglePassword.setAttribute(
+      "aria-label",
+      isPassword ? "Hide password" : "Show password"
+    );
+  });
+</script>
+
+{% endblock content %}

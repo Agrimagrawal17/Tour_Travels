@@ -1,0 +1,275 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="mt-20 min-h-screen bg-teal-50 py-10 px-4 sm:px-6 lg:px-8">
+
+    <div class="max-w-7xl mx-auto">
+
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-teal-700 to-teal-500
+                    rounded-2xl shadow-lg p-6 sm:p-8 mb-8 text-white">
+
+            <div class="flex flex-col md:flex-row
+                        md:items-center md:justify-between gap-5">
+
+                <div>
+                    <p class="text-teal-100 text-sm font-medium uppercase tracking-wider">
+                        AmanTravels
+                    </p>
+
+                    <h1 class="text-3xl sm:text-4xl font-bold mt-1">
+                        Customer List
+                    </h1>
+
+                    <p class="text-teal-100 mt-2">
+                        Manage and view all your customers
+                    </p>
+                </div>
+
+                <!-- Customer Count -->
+                <div class="bg-white/10 backdrop-blur-sm
+                            border border-white/20
+                            rounded-xl px-6 py-4 text-center">
+
+                    <p class="text-3xl font-bold">
+                        {{ customer|length }}
+                    </p>
+
+                    <p class="text-sm text-teal-100">
+                        Total Customers
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        {% if customer %}
+
+        <!-- Customer Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2
+                    lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+            {% for item in customer %}
+
+            <!-- Customer Card -->
+            <div class="bg-white rounded-2xl
+                        border border-teal-100
+                        shadow-md hover:shadow-xl
+                        hover:-translate-y-1
+                        transition-all duration-300
+                        overflow-hidden">
+
+                <!-- Card Top -->
+                <div class="bg-teal-600 px-5 py-6">
+
+                    <div class="flex items-center gap-4">
+
+                        <!-- Avatar -->
+                        <div class="h-14 w-14 rounded-full
+                                    bg-white text-teal-700
+                                    flex items-center justify-center
+                                    text-xl font-bold shadow">
+
+                            {% if item.full_name %}
+                                {{ item.full_name|first|upper }}
+                            {% else %}
+                                ?
+                            {% endif %}
+
+                        </div>
+
+                        <div class="min-w-0">
+
+                            <h2 class="text-lg font-bold text-white truncate">
+
+                                {% if item.full_name %}
+                                    {{ item.full_name }}
+                                {% else %}
+                                    Unknown Customer
+                                {% endif %}
+
+                            </h2>
+
+                            <!-- Jinja2: loop.index -->
+                            <p class="text-teal-100 text-sm">
+                                Customer #{{ loop.index }}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Card Body -->
+                <div class="p-5 space-y-4">
+
+                    <!-- Email -->
+                    <div class="flex items-start gap-3">
+
+                        <div class="h-9 w-9 shrink-0
+                                    rounded-lg bg-teal-100
+                                    text-teal-700
+                                    flex items-center justify-center">
+                            ✉
+                        </div>
+
+                        <div class="min-w-0">
+
+                            <p class="text-xs uppercase
+                                      tracking-wide
+                                      text-gray-400">
+                                Email
+                            </p>
+
+                            {% if item.email %}
+
+                                <p class="text-sm font-medium
+                                          text-teal-900
+                                          truncate"
+                                   title="{{ item.email }}">
+                                    {{ item.email }}
+                                </p>
+
+                            {% else %}
+
+                                <p class="text-sm text-gray-400 italic">
+                                    Not provided
+                                </p>
+
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Phone -->
+                    <div class="flex items-start gap-3">
+
+                        <div class="h-9 w-9 shrink-0
+                                    rounded-lg bg-teal-100
+                                    text-teal-700
+                                    flex items-center justify-center">
+                            ☎
+                        </div>
+
+                        <div>
+
+                            <p class="text-xs uppercase
+                                      tracking-wide
+                                      text-gray-400">
+                                Phone
+                            </p>
+
+                            {% if item.phone %}
+
+                                <p class="text-sm font-medium text-teal-900">
+                                    {{ item.phone }}
+                                </p>
+
+                            {% else %}
+
+                                <p class="text-sm text-gray-400 italic">
+                                    Not provided
+                                </p>
+
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Card Footer -->
+                <div class="border-t border-teal-100
+                            bg-teal-50 px-5 py-4">
+
+                    <div class="flex items-center justify-between">
+
+                        <span class="text-xs text-gray-500">
+
+                            {% if item.id %}
+                                ID: {{ item.id|string|truncate(12, True, '...') }}
+                            {% else %}
+                                ID: N/A
+                            {% endif %}
+
+                        </span>
+
+
+                        {% if item.email and item.phone %}
+
+                            <span class="px-3 py-1
+                                         rounded-full
+                                         bg-teal-100
+                                         text-teal-700
+                                         text-xs font-semibold">
+                                Complete
+                            </span>
+
+                        {% else %}
+
+                            <span class="px-3 py-1
+                                         rounded-full
+                                         bg-yellow-100
+                                         text-yellow-700
+                                         text-xs font-semibold">
+                                Incomplete
+                            </span>
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+
+        {% else %}
+
+        <!-- Empty State -->
+        <div class="bg-white rounded-2xl
+                    border border-teal-100
+                    shadow-lg
+                    text-center
+                    py-16 px-6">
+
+            <div class="mx-auto h-20 w-20
+                        rounded-full
+                        bg-teal-100
+                        text-teal-600
+                        flex items-center justify-center
+                        text-3xl">
+                👥
+            </div>
+
+            <h2 class="mt-5 text-2xl font-bold text-teal-900">
+                No Customers Found
+            </h2>
+
+            <p class="mt-2 text-gray-500">
+                There are currently no customers in the database.
+            </p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,1319 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+<main class="min-h-screen bg-[#fafaf9] pt-28 pb-16">
+
+  <!-- Decorative background -->
+  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+    <div class="blob absolute -top-32 -right-32 w-[420px] h-[420px] rounded-full bg-teal-200/25"></div>
+    <div class="blob absolute top-[45%] -left-48 w-[420px] h-[420px] rounded-full bg-amber-200/15"></div>
+    <div class="absolute top-[30%] right-[20%] w-32 h-32 rounded-full bg-blue-100/20 blur-3xl"></div>
+  </div>
+
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+
+    <!-- =====================================================
+         WELCOME HEADER
+         ===================================================== -->
+    <section class="mb-8">
+
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+
+        <div class="flex items-center gap-4">
+
+          <!-- Avatar -->
+          <div class="relative shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-800 text-white flex items-center justify-center text-xl font-extrabold shadow-xl shadow-teal-700/20">
+              AM
+            </div>
+
+            <span class="absolute -right-1 -bottom-1 w-5 h-5 rounded-full bg-emerald-500 border-4 border-[#fafaf9]"></span>
+          </div>
+
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-xs font-bold uppercase tracking-wider text-teal-700">
+                Traveler dashboard
+              </span>
+
+              <span class="w-1 h-1 rounded-full bg-slate-300"></span>
+
+              <span class="text-xs text-slate-400">
+                Member since 2025
+              </span>
+            </div>
+
+            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-950">
+              Welcome back, Aman 👋
+            </h1>
+
+            <p class="mt-1.5 text-sm sm:text-base text-slate-500">
+              Your next adventure is closer than you think.
+            </p>
+          </div>
+
+        </div>
+
+
+        <!-- Header actions -->
+        <div class="flex flex-wrap gap-3">
+
+          <button
+            class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-700 shadow-sm hover:border-teal-200 hover:text-teal-700 transition"
+          >
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.5 18.5a6.5 6.5 0 10-7-11.8"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 4v4h4"/>
+            </svg>
+            My profile
+          </button>
+
+          <a
+            href="#destinations"
+            class="inline-flex items-center gap-2 rounded-xl bg-teal-700 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-teal-700/20 hover:bg-teal-800 transition"
+          >
+            Explore destinations
+
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6"/>
+            </svg>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TRAVEL STATS
+         ===================================================== -->
+    <section class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+
+      <!-- Wallet -->
+      <div class="lift rounded-3xl bg-white border border-slate-200/80 p-5 shadow-sm">
+
+        <div class="flex items-center justify-between">
+
+          <div class="w-11 h-11 rounded-2xl bg-teal-50 text-teal-700 flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <rect x="3" y="5" width="18" height="14" rx="2"/>
+              <path stroke-linecap="round" d="M16 12h.01"/>
+              <path stroke-linecap="round" d="M3 8h18"/>
+            </svg>
+          </div>
+
+          <span class="text-[11px] font-bold text-emerald-600 bg-emerald-50 rounded-full px-2 py-1">
+            Available
+          </span>
+
+        </div>
+
+        <p class="mt-5 text-xs font-semibold uppercase tracking-wider text-slate-400">
+          Travel balance
+        </p>
+
+        <h2 class="mt-1 text-2xl font-extrabold text-slate-950">
+          ₹42,850
+        </h2>
+
+        <button class="mt-2 text-xs font-bold text-teal-700 hover:text-teal-800">
+          Add money →
+        </button>
+
+      </div>
+
+
+      <!-- Trips -->
+      <div class="lift rounded-3xl bg-white border border-slate-200/80 p-5 shadow-sm">
+
+        <div class="w-11 h-11 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6.5l8-3 8 3v11l-8 3-8-3v-11z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3.5v14M4 6.5l8 3 8-3"/>
+          </svg>
+        </div>
+
+        <p class="mt-5 text-xs font-semibold uppercase tracking-wider text-slate-400">
+          Trips booked
+        </p>
+
+        <h2 class="mt-1 text-2xl font-extrabold text-slate-950">
+          12
+        </h2>
+
+        <p class="mt-2 text-xs text-slate-400">
+          3 upcoming
+        </p>
+
+      </div>
+
+
+      <!-- Travelers -->
+      <div class="lift rounded-3xl bg-white border border-slate-200/80 p-5 shadow-sm">
+
+        <div class="w-11 h-11 rounded-2xl bg-violet-50 text-violet-600 flex items-center justify-center">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 19v-1.25A3.75 3.75 0 0012.25 14h-4.5A3.75 3.75 0 004 17.75V19"/>
+            <circle cx="10" cy="8" r="3.25"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 11a2.5 2.5 0 100-5M17 14h1a3 3 0 013 3v2"/>
+          </svg>
+        </div>
+
+        <p class="mt-5 text-xs font-semibold uppercase tracking-wider text-slate-400">
+          Travel companions
+        </p>
+
+        <h2 class="mt-1 text-2xl font-extrabold text-slate-950">
+          5
+        </h2>
+
+        <button class="mt-2 text-xs font-bold text-teal-700">
+          Manage travelers →
+        </button>
+
+      </div>
+
+
+      <!-- Rewards -->
+      <div class="lift rounded-3xl bg-white border border-slate-200/80 p-5 shadow-sm">
+
+        <div class="w-11 h-11 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3z"/>
+          </svg>
+        </div>
+
+        <p class="mt-5 text-xs font-semibold uppercase tracking-wider text-slate-400">
+          Travel points
+        </p>
+
+        <h2 class="mt-1 text-2xl font-extrabold text-slate-950">
+          8,450
+        </h2>
+
+        <p class="mt-2 text-xs text-amber-600 font-semibold">
+          Gold member
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         NEXT ADVENTURE HERO
+         ===================================================== -->
+    <section class="mb-8">
+
+      <div class="relative overflow-hidden rounded-[2rem] min-h-[390px] flex items-end">
+
+        <img
+          src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1800&q=85"
+          alt="India travel destination"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/60 to-slate-950/10"></div>
+
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+
+        <div class="relative z-10 p-7 sm:p-10 max-w-2xl text-white">
+
+          <div class="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-3 py-1.5 text-xs font-bold text-white mb-5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+            Your next adventure
+          </div>
+
+          <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
+            Golden Triangle
+          </h2>
+
+          <p class="mt-3 text-sm sm:text-base text-white/75 max-w-lg leading-7">
+            Delhi · Agra · Jaipur
+            <span class="mx-2 text-white/40">•</span>
+            6 Days / 5 Nights
+          </p>
+
+          <div class="mt-6 flex flex-wrap items-center gap-3">
+
+            <div class="inline-flex items-center gap-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 px-4 py-2.5">
+              <svg class="w-4 h-4 text-amber-300" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3z"/>
+              </svg>
+              <span class="text-sm font-bold">4.9 rated</span>
+            </div>
+
+            <div class="inline-flex items-center gap-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 px-4 py-2.5">
+              <svg class="w-4 h-4 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"/>
+                <circle cx="12" cy="12" r="9"/>
+              </svg>
+              <span class="text-sm font-bold">29 Aug 2026</span>
+            </div>
+
+          </div>
+
+          <button class="mt-7 inline-flex items-center gap-2 rounded-xl bg-white text-slate-900 px-5 py-3 text-sm font-extrabold hover:bg-teal-50 transition">
+            View trip details
+
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6"/>
+            </svg>
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EXPLORE DESTINATIONS
+         ===================================================== -->
+    <section id="destinations" class="mb-10">
+
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-5">
+
+        <div>
+          <span class="text-xs font-bold uppercase tracking-[0.18em] text-teal-700">
+            Discover
+          </span>
+
+          <h2 class="mt-1 text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-950">
+            Explore destinations
+          </h2>
+
+          <p class="mt-1 text-sm text-slate-500">
+            Find your next unforgettable journey.
+          </p>
+        </div>
+
+        <a href="#" class="text-sm font-bold text-teal-700 hover:text-teal-800">
+          View all destinations →
+        </a>
+
+      </div>
+
+
+      <!-- Search -->
+      <div class="mb-5 rounded-2xl bg-white border border-slate-200 p-3 shadow-sm flex flex-col md:flex-row gap-3">
+
+        <div class="relative flex-1">
+          <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <circle cx="11" cy="11" r="7"/>
+            <path stroke-linecap="round" d="M20 20l-4-4"/>
+          </svg>
+
+          <input
+            type="text"
+            placeholder="Search destinations, cities or experiences..."
+            class="w-full rounded-xl bg-slate-50 border border-transparent py-3 pl-11 pr-4 text-sm outline-none focus:bg-white focus:border-teal-300 transition"
+          />
+        </div>
+
+        <button class="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-100 px-5 py-3 text-sm font-bold text-slate-700 hover:bg-teal-50 hover:text-teal-700 transition">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M7 12h10M10 18h4"/>
+          </svg>
+          Filters
+        </button>
+
+      </div>
+
+
+      <!-- Destination cards -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+        <!-- Dubai -->
+        <article class="destination-card group relative h-[300px] overflow-hidden rounded-3xl bg-slate-900">
+
+          <img
+            src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=85"
+            alt="Dubai"
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+
+          <div class="overlay absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
+
+          <button class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-rose-500 transition">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20.8 8.8c0 5.5-8.8 10.2-8.8 10.2S3.2 14.3 3.2 8.8A4.8 4.8 0 018 4a5.1 5.1 0 014 2.1A5.1 5.1 0 0116 4a4.8 4.8 0 014.8 4.8z"/>
+            </svg>
+          </button>
+
+          <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
+            <div class="flex items-center gap-2 text-xs text-white/70">
+              UAE
+              <span>•</span>
+              42 packages
+            </div>
+
+            <h3 class="mt-1 text-xl font-extrabold">
+              Dubai
+            </h3>
+
+            <div class="mt-3 flex items-center justify-between">
+              <span class="text-sm font-semibold">
+                From ₹38,500
+              </span>
+
+              <span class="w-8 h-8 rounded-lg bg-white/10 backdrop-blur flex items-center justify-center">
+                →
+              </span>
+            </div>
+          </div>
+
+        </article>
+
+
+        <!-- Bali -->
+        <article class="destination-card group relative h-[300px] overflow-hidden rounded-3xl bg-slate-900">
+
+          <img
+            src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=85"
+            alt="Bali"
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+
+          <div class="overlay absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
+
+          <button class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-rose-500 transition">
+            ♡
+          </button>
+
+          <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
+            <div class="flex items-center gap-2 text-xs text-white/70">
+              Indonesia
+              <span>•</span>
+              36 packages
+            </div>
+
+            <h3 class="mt-1 text-xl font-extrabold">
+              Bali
+            </h3>
+
+            <div class="mt-3 flex items-center justify-between">
+              <span class="text-sm font-semibold">
+                From ₹45,900
+              </span>
+
+              <span class="w-8 h-8 rounded-lg bg-white/10 backdrop-blur flex items-center justify-center">
+                →
+              </span>
+            </div>
+          </div>
+
+        </article>
+
+
+        <!-- Maldives -->
+        <article class="destination-card group relative h-[300px] overflow-hidden rounded-3xl bg-slate-900">
+
+          <img
+            src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=85"
+            alt="Maldives"
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+
+          <div class="overlay absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
+
+          <button class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-rose-500 transition">
+            ♡
+          </button>
+
+          <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
+            <div class="flex items-center gap-2 text-xs text-white/70">
+              Maldives
+              <span>•</span>
+              28 packages
+            </div>
+
+            <h3 class="mt-1 text-xl font-extrabold">
+              Maldives
+            </h3>
+
+            <div class="mt-3 flex items-center justify-between">
+              <span class="text-sm font-semibold">
+                From ₹62,500
+              </span>
+
+              <span class="w-8 h-8 rounded-lg bg-white/10 backdrop-blur flex items-center justify-center">
+                →
+              </span>
+            </div>
+          </div>
+
+        </article>
+
+
+        <!-- Paris -->
+        <article class="destination-card group relative h-[300px] overflow-hidden rounded-3xl bg-slate-900">
+
+          <img
+            src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=85"
+            alt="Paris"
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+
+          <div class="overlay absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
+
+          <button class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-rose-500 transition">
+            ♡
+          </button>
+
+          <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
+            <div class="flex items-center gap-2 text-xs text-white/70">
+              France
+              <span>•</span>
+              31 packages
+            </div>
+
+            <h3 class="mt-1 text-xl font-extrabold">
+              Paris
+            </h3>
+
+            <div class="mt-3 flex items-center justify-between">
+              <span class="text-sm font-semibold">
+                From ₹92,000
+              </span>
+
+              <span class="w-8 h-8 rounded-lg bg-white/10 backdrop-blur flex items-center justify-center">
+                →
+              </span>
+            </div>
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MY UPCOMING TRIPS + WALLET
+         ===================================================== -->
+    <section class="grid lg:grid-cols-3 gap-5 mb-8">
+
+
+      <!-- My upcoming trip -->
+      <div class="lg:col-span-2 rounded-3xl bg-white border border-slate-200/80 shadow-sm overflow-hidden">
+
+        <div class="p-6 border-b border-slate-100 flex items-center justify-between">
+
+          <div>
+            <h2 class="text-lg font-extrabold text-slate-950">
+              My upcoming trips
+            </h2>
+
+            <p class="mt-1 text-sm text-slate-400">
+              Your confirmed adventures
+            </p>
+          </div>
+
+          <a href="#" class="text-sm font-bold text-teal-700">
+            View all
+          </a>
+
+        </div>
+
+
+        <div class="p-5">
+
+          <div class="rounded-2xl bg-slate-50 p-4 flex flex-col sm:flex-row gap-4">
+
+            <img
+              src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=500&q=80"
+              alt="Golden Triangle"
+              class="w-full sm:w-32 h-28 rounded-xl object-cover"
+            />
+
+            <div class="flex-1">
+
+              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+
+                <div>
+                  <span class="inline-flex rounded-full bg-emerald-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-emerald-600">
+                    Confirmed
+                  </span>
+
+                  <h3 class="mt-2 text-lg font-extrabold text-slate-950">
+                    Golden Triangle
+                  </h3>
+
+                  <p class="text-sm text-slate-400">
+                    Delhi · Agra · Jaipur
+                  </p>
+                </div>
+
+                <div class="text-left sm:text-right">
+                  <p class="text-xs text-slate-400">Booking ID</p>
+                  <p class="text-sm font-bold text-slate-700">AT-28491</p>
+                </div>
+
+              </div>
+
+
+              <div class="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-xs text-slate-500">
+
+                <span class="inline-flex items-center gap-1.5">
+                  <svg class="w-4 h-4 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path stroke-linecap="round" d="M12 7v5l3 2"/>
+                  </svg>
+                  29 Aug — 03 Sep
+                </span>
+
+                <span class="inline-flex items-center gap-1.5">
+                  <svg class="w-4 h-4 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16 19v-1.25A3.75 3.75 0 0012.25 14h-4.5A3.75 3.75 0 004 17.75V19"/>
+                    <circle cx="10" cy="8" r="3.25"/>
+                  </svg>
+                  2 travelers
+                </span>
+
+                <span class="inline-flex items-center gap-1.5">
+                  <svg class="w-4 h-4 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                    <path stroke-linecap="round" d="M12 6v12M8.5 9.5c0-1.1 1.5-2 3.5-2s3.5.9 3.5 2-1.5 2-3.5 2-3.5.9-3.5 2 1.5 2 3.5 2 3.5-.9 3.5-2"/>
+                  </svg>
+                  ₹78,500
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Progress -->
+          <div class="mt-5">
+
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold text-slate-500">
+                Trip preparation
+              </span>
+
+              <span class="text-xs font-bold text-teal-700">
+                75%
+              </span>
+            </div>
+
+            <div class="h-2 rounded-full bg-slate-100 overflow-hidden">
+              <div class="h-full w-3/4 rounded-full bg-gradient-to-r from-teal-600 to-teal-400"></div>
+            </div>
+
+          </div>
+
+
+          <div class="mt-5 flex flex-wrap gap-2">
+
+            <button class="rounded-xl bg-teal-700 text-white px-4 py-2.5 text-xs font-bold hover:bg-teal-800 transition">
+              View itinerary
+            </button>
+
+            <button class="rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-xs font-bold text-slate-600 hover:border-teal-200 hover:text-teal-700 transition">
+              Documents
+            </button>
+
+            <button class="rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-xs font-bold text-slate-600 hover:border-teal-200 hover:text-teal-700 transition">
+              Manage trip
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Wallet -->
+      <div class="rounded-3xl bg-gradient-to-br from-slate-950 to-slate-900 text-white p-6 relative overflow-hidden">
+
+        <div class="absolute -right-16 -top-16 w-44 h-44 rounded-full bg-teal-500/15"></div>
+        <div class="absolute -left-10 -bottom-16 w-40 h-40 rounded-full bg-amber-500/10"></div>
+
+        <div class="relative">
+
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-sm font-semibold text-slate-400">
+                Aman Travel Wallet
+              </p>
+
+              <p class="mt-1 text-xs text-slate-500">
+                Available balance
+              </p>
+            </div>
+
+            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
+              <svg class="w-5 h-5 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                <path d="M16 12h.01"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="mt-7 text-3xl font-extrabold">
+            ₹42,850
+          </div>
+
+          <div class="mt-2 text-xs text-slate-500">
+            Updated just now
+          </div>
+
+
+          <div class="mt-7 grid grid-cols-2 gap-3">
+
+            <button class="rounded-xl bg-teal-600 px-3 py-3 text-xs font-bold hover:bg-teal-500 transition">
+              + Add money
+            </button>
+
+            <button class="rounded-xl bg-white/10 border border-white/10 px-3 py-3 text-xs font-bold text-white hover:bg-white/15 transition">
+              Transactions
+            </button>
+
+          </div>
+
+
+          <div class="mt-7 pt-5 border-t border-white/10">
+
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs text-slate-400">
+                This month's spending
+              </span>
+
+              <span class="text-xs font-bold text-white">
+                ₹18,450
+              </span>
+            </div>
+
+            <div class="h-1.5 rounded-full bg-white/10 overflow-hidden">
+              <div class="h-full w-[43%] rounded-full bg-teal-400"></div>
+            </div>
+
+            <div class="mt-2 text-[10px] text-slate-500">
+              ₹24,400 remaining
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EXPENSES + TRANSACTIONS
+         ===================================================== -->
+    <section class="grid lg:grid-cols-3 gap-5 mb-8">
+
+
+      <!-- Spending analytics -->
+      <div class="rounded-3xl bg-white border border-slate-200/80 shadow-sm p-6">
+
+        <div class="flex items-start justify-between">
+
+          <div>
+            <h2 class="text-lg font-extrabold text-slate-950">
+              Travel expenses
+            </h2>
+
+            <p class="mt-1 text-sm text-slate-400">
+              August spending
+            </p>
+          </div>
+
+          <button class="text-xs font-bold text-teal-700">
+            Details
+          </button>
+
+        </div>
+
+
+        <div class="mt-7 flex items-center gap-6">
+
+          <!-- Donut -->
+          <div class="relative w-32 h-32 shrink-0">
+
+            <svg class="w-full h-full -rotate-90" viewBox="0 0 120 120">
+
+              <circle
+                cx="60"
+                cy="60"
+                r="46"
+                fill="none"
+                stroke="#f1f5f9"
+                stroke-width="14"
+              />
+
+              <circle
+                cx="60"
+                cy="60"
+                r="46"
+                fill="none"
+                stroke="#0f766e"
+                stroke-width="14"
+                stroke-dasharray="145 289"
+                stroke-linecap="round"
+              />
+
+              <circle
+                cx="60"
+                cy="60"
+                r="46"
+                fill="none"
+                stroke="#f59e0b"
+                stroke-width="14"
+                stroke-dasharray="75 289"
+                stroke-dashoffset="-150"
+                stroke-linecap="round"
+              />
+
+              <circle
+                cx="60"
+                cy="60"
+                r="46"
+                fill="none"
+                stroke="#6366f1"
+                stroke-width="14"
+                stroke-dasharray="48 289"
+                stroke-dashoffset="-230"
+                stroke-linecap="round"
+              />
+
+            </svg>
+
+            <div class="absolute inset-0 flex flex-col items-center justify-center">
+              <span class="text-xl font-extrabold text-slate-950">
+                ₹18.4K
+              </span>
+              <span class="text-[9px] uppercase tracking-wider text-slate-400">
+                Spent
+              </span>
+            </div>
+
+          </div>
+
+
+          <div class="space-y-3 text-xs">
+
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-teal-600"></span>
+              <span class="text-slate-500">Hotels</span>
+              <span class="font-bold text-slate-800">₹9.2K</span>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+              <span class="text-slate-500">Flights</span>
+              <span class="font-bold text-slate-800">₹5.1K</span>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
+              <span class="text-slate-500">Activities</span>
+              <span class="font-bold text-slate-800">₹2.8K</span>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-slate-300"></span>
+              <span class="text-slate-500">Other</span>
+              <span class="font-bold text-slate-800">₹1.3K</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Transactions -->
+      <div class="lg:col-span-2 rounded-3xl bg-white border border-slate-200/80 shadow-sm overflow-hidden">
+
+        <div class="p-6 border-b border-slate-100 flex items-center justify-between">
+
+          <div>
+            <h2 class="text-lg font-extrabold text-slate-950">
+              Recent transactions
+            </h2>
+
+            <p class="mt-1 text-sm text-slate-400">
+              Your latest wallet activity
+            </p>
+          </div>
+
+          <button class="text-sm font-bold text-teal-700">
+            View all →
+          </button>
+
+        </div>
+
+
+        <div class="divide-y divide-slate-100">
+
+          <!-- Transaction -->
+          <div class="px-6 py-4 flex items-center justify-between gap-4">
+
+            <div class="flex items-center gap-3">
+
+              <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-500 flex items-center justify-center">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" d="M12 6v12M8.5 9.5c0-1.1 1.5-2 3.5-2s3.5.9 3.5 2-1.5 2-3.5 2-3.5.9-3.5 2 1.5 2 3.5 2 3.5-.9 3.5-2"/>
+                </svg>
+              </div>
+
+              <div>
+                <p class="text-sm font-bold text-slate-900">
+                  Golden Triangle booking
+                </p>
+                <p class="text-xs text-slate-400">
+                  Aug 10, 2026 · Booking #AT-28491
+                </p>
+              </div>
+
+            </div>
+
+            <span class="text-sm font-extrabold text-rose-500">
+              -₹18,500
+            </span>
+
+          </div>
+
+
+          <div class="px-6 py-4 flex items-center justify-between gap-4">
+
+            <div class="flex items-center gap-3">
+
+              <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" d="M12 6v12M8.5 9.5c0-1.1 1.5-2 3.5-2s3.5.9 3.5 2-1.5 2-3.5 2-3.5.9-3.5 2 1.5 2 3.5 2 3.5-.9 3.5-2"/>
+                </svg>
+              </div>
+
+              <div>
+                <p class="text-sm font-bold text-slate-900">
+                  Wallet top-up
+                </p>
+                <p class="text-xs text-slate-400">
+                  Aug 08, 2026 · UPI
+                </p>
+              </div>
+
+            </div>
+
+            <span class="text-sm font-extrabold text-emerald-600">
+              +₹25,000
+            </span>
+
+          </div>
+
+
+          <div class="px-6 py-4 flex items-center justify-between gap-4">
+
+            <div class="flex items-center gap-3">
+
+              <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-500 flex items-center justify-center">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" d="M12 6v12M8.5 9.5c0-1.1 1.5-2 3.5-2s3.5.9 3.5 2-1.5 2-3.5 2-3.5.9-3.5 2 1.5 2 3.5 2 3.5-.9 3.5-2"/>
+                </svg>
+              </div>
+
+              <div>
+                <p class="text-sm font-bold text-slate-900">
+                  Hotel reservation
+                </p>
+                <p class="text-xs text-slate-400">
+                  Aug 04, 2026 · Jaipur
+                </p>
+              </div>
+
+            </div>
+
+            <span class="text-sm font-extrabold text-rose-500">
+              -₹7,850
+            </span>
+
+          </div>
+
+
+          <div class="px-6 py-4 flex items-center justify-between gap-4">
+
+            <div class="flex items-center gap-3">
+
+              <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" d="M12 6v12M8.5 9.5c0-1.1 1.5-2 3.5-2s3.5.9 3.5 2-1.5 2-3.5 2-3.5.9-3.5 2 1.5 2 3.5 2 3.5-.9 3.5-2"/>
+                </svg>
+              </div>
+
+              <div>
+                <p class="text-sm font-bold text-slate-900">
+                  Booking refund
+                </p>
+                <p class="text-xs text-slate-400">
+                  Jul 29, 2026 · Ref #RF-1293
+                </p>
+              </div>
+
+            </div>
+
+            <span class="text-sm font-extrabold text-emerald-600">
+              +₹4,500
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SAVED + RECOMMENDATIONS
+         ===================================================== -->
+    <section class="grid lg:grid-cols-3 gap-5 mb-8">
+
+
+      <!-- Saved destinations -->
+      <div class="lg:col-span-2 rounded-3xl bg-white border border-slate-200/80 shadow-sm overflow-hidden">
+
+        <div class="p-6 border-b border-slate-100 flex items-center justify-between">
+
+          <div>
+            <h2 class="text-lg font-extrabold text-slate-950">
+              Your saved destinations
+            </h2>
+
+            <p class="mt-1 text-sm text-slate-400">
+              Places you want to explore
+            </p>
+          </div>
+
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-500">
+            6 saved
+          </span>
+
+        </div>
+
+
+        <div class="p-5 grid sm:grid-cols-3 gap-4">
+
+          <div class="group cursor-pointer">
+
+            <div class="relative h-32 rounded-2xl overflow-hidden">
+
+              <img
+                src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=500&q=80"
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                alt="Paris"
+              />
+
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+
+              <button class="absolute top-2 right-2 w-7 h-7 rounded-full bg-white/90 text-rose-500 flex items-center justify-center">
+                ♥
+              </button>
+
+              <div class="absolute bottom-3 left-3 text-white">
+                <div class="text-sm font-extrabold">Paris</div>
+                <div class="text-[10px] text-white/70">From ₹92,000</div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="group cursor-pointer">
+
+            <div class="relative h-32 rounded-2xl overflow-hidden">
+
+              <img
+                src="https://images.unsplash.com/photo-1528164344705-47542687000d?auto=format&fit=crop&w=500&q=80"
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                alt="Bali"
+              />
+
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+
+              <button class="absolute top-2 right-2 w-7 h-7 rounded-full bg-white/90 text-rose-500 flex items-center justify-center">
+                ♥
+              </button>
+
+              <div class="absolute bottom-3 left-3 text-white">
+                <div class="text-sm font-extrabold">Bali</div>
+                <div class="text-[10px] text-white/70">From ₹45,900</div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="group cursor-pointer">
+
+            <div class="relative h-32 rounded-2xl overflow-hidden">
+
+              <img
+                src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=500&q=80"
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                alt="Maldives"
+              />
+
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+
+              <button class="absolute top-2 right-2 w-7 h-7 rounded-full bg-white/90 text-rose-500 flex items-center justify-center">
+                ♥
+              </button>
+
+              <div class="absolute bottom-3 left-3 text-white">
+                <div class="text-sm font-extrabold">Maldives</div>
+                <div class="text-[10px] text-white/70">From ₹62,500</div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Rewards -->
+      <div class="rounded-3xl bg-gradient-to-br from-amber-500 to-orange-600 p-6 text-white relative overflow-hidden">
+
+        <div class="absolute -right-12 -top-12 w-40 h-40 rounded-full bg-white/10"></div>
+
+        <div class="relative">
+
+          <div class="flex items-center justify-between">
+
+            <div class="w-11 h-11 rounded-2xl bg-white/15 flex items-center justify-center">
+
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3z"/>
+              </svg>
+
+            </div>
+
+            <span class="text-xs font-bold bg-white/15 rounded-full px-3 py-1">
+              GOLD
+            </span>
+
+          </div>
+
+          <p class="mt-6 text-sm font-semibold text-orange-100">
+            Your travel rewards
+          </p>
+
+          <div class="mt-1 text-3xl font-extrabold">
+            8,450 points
+          </div>
+
+          <p class="mt-2 text-xs text-orange-100">
+            ₹845 travel credit available
+          </p>
+
+          <div class="mt-6 h-2 rounded-full bg-black/10 overflow-hidden">
+            <div class="h-full w-[72%] rounded-full bg-white"></div>
+          </div>
+
+          <p class="mt-2 text-[11px] text-orange-100">
+            1,550 points until Platinum
+          </p>
+
+          <button class="mt-6 w-full rounded-xl bg-white text-orange-600 py-3 text-sm font-extrabold hover:bg-orange-50 transition">
+            Redeem rewards
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TRAVEL DOCUMENTS + SUPPORT
+         ===================================================== -->
+    <section class="grid lg:grid-cols-3 gap-5">
+
+
+      <!-- Documents -->
+      <div class="lg:col-span-2 rounded-3xl bg-white border border-slate-200/80 shadow-sm">
+
+        <div class="p-6 border-b border-slate-100 flex items-center justify-between">
+
+          <div>
+            <h2 class="text-lg font-extrabold text-slate-950">
+              Travel documents
+            </h2>
+
+            <p class="mt-1 text-sm text-slate-400">
+              Everything you need for your upcoming trips
+            </p>
+          </div>
+
+          <button class="inline-flex items-center gap-2 rounded-xl bg-slate-100 px-3 py-2 text-xs font-bold text-slate-600 hover:bg-teal-50 hover:text-teal-700 transition">
+            <span>+</span>
+            Upload
+          </button>
+
+        </div>
+
+
+        <div class="p-5 grid sm:grid-cols-3 gap-3">
+
+          <div class="rounded-2xl border border-slate-100 p-4 hover:border-teal-200 hover:bg-teal-50/20 transition">
+
+            <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-500 flex items-center justify-center">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 3.75h9l3 3v13.5H6a1.5 1.5 0 01-1.5-1.5V5.25A1.5 1.5 0 016 3.75z"/>
+                <path stroke-linecap="round" d="M14 3.75v4h4"/>
+              </svg>
+            </div>
+
+            <p class="mt-3 text-sm font-bold text-slate-900">
+              Passport
+            </p>
+
+            <p class="mt-1 text-xs text-emerald-600 font-semibold">
+              Verified
+            </p>
+
+          </div>
+
+
+          <div class="rounded-2xl border border-slate-100 p-4 hover:border-teal-200 hover:bg-teal-50/20 transition">
+
+            <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-500 flex items-center justify-center">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 3.75h9l3 3v13.5H6a1.5 1.5 0 01-1.5-1.5V5.25A1.5 1.5 0 016 3.75z"/>
+                <path stroke-linecap="round" d="M14 3.75v4h4"/>
+              </svg>
+            </div>
+
+            <p class="mt-3 text-sm font-bold text-slate-900">
+              Visa documents
+            </p>
+
+            <p class="mt-1 text-xs text-amber-600 font-semibold">
+              Action required
+            </p>
+
+          </div>
+
+
+          <div class="rounded-2xl border border-slate-100 p-4 hover:border-teal-200 hover:bg-teal-50/20 transition">
+
+            <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 3.75h9l3 3v13.5H6a1.5 1.5 0 01-1.5-1.5V5.25A1.5 1.5 0 016 3.75z"/>
+                <path stroke-linecap="round" d="M14 3.75v4h4"/>
+              </svg>
+            </div>
+
+            <p class="mt-3 text-sm font-bold text-slate-900">
+              Travel insurance
+            </p>
+
+            <p class="mt-1 text-xs text-emerald-600 font-semibold">
+              Active
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Support -->
+      <div class="rounded-3xl bg-slate-950 text-white p-6 relative overflow-hidden">
+
+        <div class="absolute -right-16 -top-16 w-44 h-44 rounded-full bg-teal-500/10"></div>
+
+        <div class="relative">
+
+          <div class="w-11 h-11 rounded-2xl bg-teal-600/20 text-teal-300 flex items-center justify-center">
+
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M18 10a6 6 0 10-12 0v5a3 3 0 003 3h1v-5H7v-3a5 5 0 0110 0v3h-3v5h1a3 3 0 003-3v-5z"/>
+              <path stroke-linecap="round" d="M12 21h3"/>
+            </svg>
+
+          </div>
+
+          <h2 class="mt-5 text-xl font-extrabold">
+            Need help?
+          </h2>
+
+          <p class="mt-2 text-sm leading-6 text-slate-400">
+            Our travel experts are available to help with bookings, documents, itinerary changes and more.
+          </p>
+
+          <button class="mt-6 w-full rounded-xl bg-teal-600 py-3 text-sm font-bold hover:bg-teal-500 transition">
+            Chat with support
+          </button>
+
+          <button class="mt-2 w-full rounded-xl border border-white/10 bg-white/5 py-3 text-sm font-bold text-slate-300 hover:bg-white/10 transition">
+            Help center
+          </button>
+
+          <div class="mt-6 pt-5 border-t border-white/10 flex items-center gap-2 text-xs text-slate-500">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            Travel support online
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER STATUS
+         ===================================================== -->
+    <div class="mt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
+
+      <p>
+        Aman Travels · Your journey, beautifully organized.
+      </p>
+
+      <div class="flex items-center gap-4">
+        <a href="#" class="hover:text-teal-700 transition">
+          Privacy
+        </a>
+
+        <a href="#" class="hover:text-teal-700 transition">
+          Terms
+        </a>
+
+        <a href="#" class="hover:text-teal-700 transition">
+          Support
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock content %}
